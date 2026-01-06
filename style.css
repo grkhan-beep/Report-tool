@@ -1,0 +1,89 @@
+
+/* Hide Streamlit hamburger menu */
+#MainMenu {visibility: hidden;}
+
+/* Hide Streamlit header */
+header {visibility: hidden;}
+
+/* Hide Streamlit footer */
+footer {visibility: hidden;}
+
+/* Remove top padding left by header */
+.block-container {
+    padding-top: 1rem;
+}
+
+
+/* Sidebar background */
+
+[data-testid="stSidebar"] {
+    background-color: #0A0F0D !important;
+    color: rgb(0, 0, 0);
+}
+
+/* Sidebar text */
+[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+/* Main background */
+.stApp {
+    background-color: #8282f6;
+
+}
+
+/* Card style */
+.card {
+    background: #ffffff;
+    padding: 01px;
+    border-radius: 3px;
+    box-shadow: 0px 10px 6px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+
+/* Number input / text input box */
+[data-testid="stSidebar"] input {
+    background-color: #1f2937 !important;   /* box color */
+    color: #f7f9fa !important;              /* text color */;
+}
+
+/* Placeholder text */
+[data-testid="stSidebar"] input::placeholder {
+    color: #8080ff !important;
+}
+
+/* File uploader box */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] {
+    background-color: #1f2937 !important;
+    color: #f7f9fa !important;
+}
+
+/* Browse files button */
+[data-testid="stSidebar"] button {
+    background-color: #1f2937  !important;
+    color: #fafafa !important;
+}
+
+
+
+[data-testid="stFileUploaderDropzone"] {
+    background-color: #1f2937 !important;   /* black */
+    border-radius: 10px;
+}
+
+/* Inner container (fixes white patch in some versions) */
+
+[data-testid="stFileUploaderDropzone"] > div {
+    background-color: #1f2937 !important;
+}
+
+/* Keep text visible on black */
+section[data-testid="stSidebar"]
+[data-testid="stFileUploaderDropzoneInstructions"] span,
+section[data-testid="stSidebar"]
+[data-testid="stFileUploaderDropzoneInstructions"] small {
+    color: #e5e7eb !important;
+}
+
+
