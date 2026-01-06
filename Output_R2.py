@@ -63,7 +63,7 @@ if run_clicked:
         st.success("Report generated successfully! Please wait")
         # Choose engine based on extension
         if uploaded_file.name.endswith(".xlsx"):
-            data = pd.read_excel(uploaded_file, engine="openpyxl")
+            data = pd.read_excel(uploaded_file)
         else:
             data = pd.read_excel(uploaded_file, engine="xlrd")
         df= data[data['Element'].str.contains(r'Circuit Breaker|Master Trip|OC Relay Operated|EF Relay Operated|NonDir OC50Stg1 Optd|Non-Dir EF Operated|Non-Dir EF 50N Stg2|OC or EF Rly Trip|VCB Trip on Fault|OvrCurr Prot. Stg2|Eth Flt Prot. Stg2|Eth Flt Prot. Stg1|General Prot. Trip|Transfrmer Diff Prot|Non-Dir EF 50N Stg1|OvrCurr Prot. Stg1|Oil Temperature Trip|Sens. EF Operated|OC & EF Operated|General Prot Trip|REF Protection|PRD Trip (Main Tank)|27 Stg1 UV Trip|Winding Temp Trip|Standby EF Trip|Protection Tripped|59 Stage1 OV trip|Trxf Main Prt Trip|Non-Dir OC Operated|51 OC|Transfrmer Diff Prot|Oil Temperature Trip|Trxf Main Prt Trip|Winding Temp Trip|Protection Tripped|REF Protection|PRD Trip (Main Tank)', case=False, na=False)]
@@ -346,3 +346,4 @@ if run_clicked:
     
         with tab7:
             st.dataframe(style(SS_ALL),use_container_width=True,height=600)
+
