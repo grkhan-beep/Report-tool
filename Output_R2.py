@@ -84,7 +84,7 @@ if run_clicked:
         )
         result = df[condition]
         df_tr = result[result['B3'].str.contains('_TR', case=True, na=False) &
-                       `~result['B3'].str.contains(r'_TR_S', na=False) ]
+                       ~result['B3'].str.contains(r'_TR_S', na=False) ]
 
         # Non-TR rows
         df_non_tr = result[~result['B3'].str.contains('_TR', case=True, na=False) &
@@ -348,6 +348,7 @@ if run_clicked:
     
         with tab7:
             st.dataframe(style(SS_ALL),use_container_width=True,height=600)
+
 
 
 
