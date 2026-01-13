@@ -78,8 +78,8 @@ if run_clicked:
                 (df["B3"] == df["B3"].shift(-1))
             ) &
             (
-                ((df["Element"].shift(1).isin(TripSignal)) & ((df["Time stamp"].shift(1) - df["Time stamp"]).dt.total_seconds().abs() <= 3)) |   # Previous row is Trip
-                ((df["Element"].shift(-1).isin(TripSignal)) & ((df["Time stamp"] - df["Time stamp"].shift(-1)).dt.total_seconds().abs() <= 3))  # Next row is Trip
+                ((df["Element"].shift(1).isin(TripSignal)) & ((df["Time stamp"].shift(1) - df["Time stamp"]).dt.total_seconds().abs() <= 30)) |   # Previous row is Trip
+                ((df["Element"].shift(-1).isin(TripSignal)) & ((df["Time stamp"] - df["Time stamp"].shift(-1)).dt.total_seconds().abs() <= 30))  # Next row is Trip
             )
         )
         result = df[condition]
@@ -140,7 +140,7 @@ if run_clicked:
             ) &
             (
                 ((df["Element"].shift(1).isin(TripSignal)) & ((df["Time stamp"].shift(1) - df["Time stamp"]).dt.total_seconds().abs() <= 30)) |   # Previous row is Trip
-                ((df["Element"].shift(-1).isin(TripSignal)) & ((df["Time stamp"] - df["Time stamp"].shift(-1)).dt.total_seconds().abs() <= 3))  # Next row is Trip
+                ((df["Element"].shift(-1).isin(TripSignal)) & ((df["Time stamp"] - df["Time stamp"].shift(-1)).dt.total_seconds().abs() <= 30))  # Next row is Trip
             ) |
             ((df["Element"]== "Circuit Breaker") & (df["Status"] == "close"))
         )
@@ -348,6 +348,7 @@ if run_clicked:
     
         with tab7:
             st.dataframe(style(SS_ALL),use_container_width=True,height=600)
+
 
 
 
